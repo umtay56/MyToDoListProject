@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="com.example.todolisttt.MainController"
+            prefWidth="1000" prefHeight="650">
+
+    <children>
+
+
+        <ImageView preserveRatio="false" pickOnBounds="true"
+                   fitWidth="1100.0" fitHeight="700.0">
+            <image>
+                <Image url="@images/mainbg.png" />
+            </image>
+        </ImageView>
+
+
+        <HBox fx:id="mainContainer" spacing="20"
+              AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10"
+              AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="10">
+
+
+            <VBox fx:id="userPanel" spacing="10" prefWidth="150" maxWidth="150" minWidth="0">
+
+
+                <VBox spacing="85">
+                    <Label text="Users:"
+                           translateY="80"
+                           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #ffffff; -fx-opacity: 0.80;" />
+                    <ListView fx:id="userListView"
+                              style="-fx-background-color: rgba(255,255,255,0.4); -fx-background-radius: 5;" />
+                </VBox>
+
+
+                <HBox spacing="5">
+                    <Button text="Add User" onAction="#handleAddUser"
+                            style="-fx-background-color: #eee8c9; -fx-text-fill: black; -fx-background-radius: 5; -fx-opacity: 0.65;" />
+                    <Button text="Logout" onAction="#handleLogout"
+                            style="-fx-background-color: #eee8c9; -fx-text-fill: black; -fx-background-radius: 5; -fx-opacity: 0.65;" />
+                </HBox>
+            </VBox>
+
+
+
+
+            <VBox fx:id="taskPanel" spacing="10" HBox.hgrow="ALWAYS"
+                  style="-fx-background-radius: 10;">
+
+                <HBox alignment="TOP_RIGHT"
+                      AnchorPane.topAnchor="10" AnchorPane.rightAnchor="10">
+                    <Button fx:id="handleExit" text="X" onAction="#handleExit"
+                            prefWidth="30" prefHeight="30"
+                            style="-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5;" />
+                </HBox>
+
+
+                <HBox alignment="TOP_LEFT">
+                    <Button fx:id="toggleUserButton" text="Show Users" onAction="#toggleUserPanel"
+                            style="-fx-background-color: #eee8c9; -fx-text-fill: black; -fx-background-radius: 5; -fx-opacity: 0.65;" />
+                </HBox>
+
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Button text="Today" onAction="#filterToday"
+                            style="-fx-background-color: #eee8c9; -fx-background-radius: 5; -fx-opacity: 0.8;" />
+                    <Button text="Upcoming Tasks (3 Days)" onAction="#filterUpcomingTasks"
+                            style="-fx-background-color: #eee8c9; -fx-background-radius: 5; -fx-opacity: 0.8;" />
+                    <Button text="This Week" onAction="#filterWeek"
+                            style="-fx-background-color: #eee8c9; -fx-background-radius: 5; -fx-opacity: 0.8;" />
+                    <Button text="This Month" onAction="#filterMonth"
+                            style="-fx-background-color: #eee8c9; -fx-background-radius: 5; -fx-opacity: 0.8;" />
+                    <Button text="All Tasks" onAction="#showAllTasks"
+                            style="-fx-background-color: #eee8c9; -fx-background-radius: 5; -fx-opacity: 0.8;" />
+                </HBox>
+
+
+
+                <ListView fx:id="taskListView"
+                          prefHeight="400"
+                          style="-fx-background-color: rgba(255,255,255,0.4); -fx-background-radius: 10;" />
+
+
+                <HBox spacing="10">
+                    <TextField fx:id="taskInput" promptText="Task name"
+                               style="-fx-background-color: #eee8c9; -fx-text-fill: black; -fx-opacity: 0.65; -fx-prompt-text-fill: black;" />
+
+                    <DatePicker fx:id="datePicker" promptText="Select date"
+                                style="-fx-background-color: #eee8c9; -fx-opacity: 0.65; -fx-text-fill: black;" />
+
+                    <ComboBox fx:id="hourBox" promptText="Hour"
+                              style="-fx-background-color: #eee8c9; -fx-mark-color: black; -fx-opacity: 0.65; -fx-text-fill: black;" />
+
+                    <ComboBox fx:id="minuteBox" promptText="Minute"
+                              style="-fx-background-color: #eee8c9; -fx-text-fill: black; -fx-opacity: 0.65; -fx-prompt-text-fill: black;" />
+                </HBox>
+
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextArea fx:id="detailArea"
+                              promptText="Enter description"
+                              prefHeight="40"
+                              prefWidth="507"
+                              style="-fx-background-color: #eee8c9; -fx-text-fill: black; -fx-prompt-text-fill: black; -fx-opacity: 0.65; -fx-border-radius: 5; -fx-background-radius: 5;" />
+
+                    <Button text="Add" onAction="#handleAddTask"
+                            style="-fx-background-color: #eee8c9; -fx-text-fill: black; -fx-background-radius: 5; -fx-opacity: 0.65;" />
+                </HBox>
+
+            </VBox>
+        </HBox>
+    </children>
+</AnchorPane>
+

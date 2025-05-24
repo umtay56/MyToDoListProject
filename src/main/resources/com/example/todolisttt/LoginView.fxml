@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="com.example.todolisttt.LoginController"
+            prefWidth="600" prefHeight="600">
+
+    <children>
+
+        <ImageView fx:id="backgroundImage"
+                   preserveRatio="false"
+                   fitWidth="600.0" fitHeight="600.0"
+                   pickOnBounds="true"
+                   AnchorPane.topAnchor="0.0"
+                   AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0">
+            <image>
+                <Image url="@images/background.png" />
+            </image>
+        </ImageView>
+
+
+        <VBox alignment="CENTER" spacing="15"
+              AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0"
+              AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0">
+
+            <Label text="Welcome to ToDoList"
+                   style="-fx-font-size: 21px; -fx-font-weight: bold;"
+                    textFill="white" />
+
+            <TextField fx:id="usernameField"
+                       promptText="Username"
+                       maxWidth="200"
+                       style="-fx-background-color: rgba(255, 255, 255, 0.6); -fx-text-fill: black; -fx-prompt-text-fill: black; -fx-background-radius: 8;" />
+
+            <PasswordField fx:id="passwordField"
+                           promptText="Password"
+                           maxWidth="200"
+                           style="-fx-background-color: rgba(255, 255, 255, 0.6); -fx-text-fill: black; -fx-prompt-text-fill: black; -fx-background-radius: 8;" />
+
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Login" onAction="#handleLogin"
+                        style="-fx-background-color: #54371c; -fx-text-fill: white;" />
+
+                <Button text="Register" onAction="#handleRegister"
+                        style="-fx-background-color: #54371c; -fx-text-fill: white;" />
+            </HBox>
+
+            <Label fx:id="messageLabel"
+                   textFill="whitesmoke"
+                   style="-fx-font-size: 14px; -fx-font-weight: bold;" />
+
+        </VBox>
+
+    </children>
+</AnchorPane>
